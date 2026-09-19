@@ -113,7 +113,9 @@ export default function RiskIntelligencePage() {
           </div>
           <div className="card metric-card">
             <div className="metric-label">Amount at risk</div>
-            <div className="metric-value">{money(data?.summary?.totalAmountAtRisk || 42,04,660 )}</div>
+           <div className="metric-value">
+  ₹{data?.summary?.totalAmountAtRisk ?? '42,04,660'}
+</div>
             <div className="metric-footer">Linked transaction exposure</div>
           </div>
           <div className="card metric-card">
