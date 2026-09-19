@@ -1,0 +1,21 @@
+{
+  "name": "sih-cybercrime-mvp",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace frontend\" \"npm run dev --workspace backend\"",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "test": "node --test backend/services/*.test.js",
+    "generate:ml": "node data/pipeline/generateSyntheticML.mjs",
+    "normalize:public": "node data/pipeline/normalizePublicData.mjs",
+    "validate:data": "npm run normalize:public && node data/pipeline/validateSyntheticML.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

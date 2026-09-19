@@ -1,0 +1,7 @@
+{
+  "ignore": [
+    "backend/data/db_fallback.json",
+    "backend/data/*.json",
+    "**/db_fallback.json"
+  ]
+}
