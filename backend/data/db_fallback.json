@@ -134,6 +134,20 @@
   },
   "complaints": [
     {
+      "complaintId": "CMP-1789842116348",
+      "caseId": "CASE-00008",
+      "complaintDate": "2026-09-19",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 99999,
+      "victimIdentifier": "VIC-VERIFY",
+      "suspectedAccount": "SBIN0009922",
+      "status": "NEW",
+      "location": "Pune",
+      "description": "Verification case",
+      "relatedAccounts": [],
+      "id": "CMP-1789842116348"
+    },
+    {
       "complaintId": "CMP-1789837697513",
       "caseId": "CASE-00007",
       "complaintDate": "2026-09-19",
