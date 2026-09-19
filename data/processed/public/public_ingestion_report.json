@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-09-10T14:44:45.991Z",
+  "note": "Only locally supplied public dataset files are ingested. Missing downloads are reported, never replaced with fabricated rows.",
+  "sources": [
+    {
+      "source": "paysim",
+      "status": "NO_LOCAL_FILE",
+      "records": 0,
+      "amount_mean": null,
+      "amount_p50": null,
+      "amount_p95": null,
+      "transaction_types": {},
+      "fraud_ratio": null,
+      "cashout_ratio": null,
+      "timestamp_available": false,
+      "account_identifiers_available": false,
+      "geographic_information_available": false,
+      "atm_information_available": false,
+      "labels_original_or_derived": "fraud_label ORIGINAL; cash_out_label DERIVED_FROM_TRANSACTION_TYPE"
+    },
+    {
+      "source": "ieee-cis",
+      "status": "NO_LOCAL_FILE",
+      "records": 0,
+      "amount_mean": null,
+      "amount_p50": null,
+      "amount_p95": null,
+      "transaction_types": {},
+      "fraud_ratio": null,
+      "cashout_ratio": null,
+      "timestamp_available": false,
+      "account_identifiers_available": false,
+      "geographic_information_available": false,
+      "atm_information_available": false,
+      "labels_original_or_derived": "fraud_label ORIGINAL where supplied"
+    },
+    {
+      "source": "european-card",
+      "status": "NO_LOCAL_FILE",
+      "records": 0,
+      "amount_mean": null,
+      "amount_p50": null,
+      "amount_p95": null,
+      "transaction_types": {},
+      "fraud_ratio": null,
+      "cashout_ratio": null,
+      "timestamp_available": false,
+      "account_identifiers_available": false,
+      "geographic_information_available": false,
+      "atm_information_available": false,
+      "labels_original_or_derived": "fraud_label ORIGINAL where supplied"
+    }
+  ],
+  "combined_records": 0,
+  "synthetic_comparison": {
+    "source": "synthetic-ml",
+    "status": "INGESTED",
+    "records": 5090,
+    "amount_mean": 14135.41,
+    "amount_p50": 11956,
+    "amount_p95": 28187,
+    "transaction_types": {
+      "TRANSFER": 1320,
+      "IMPS": 1271,
+      "NEFT": 1262,
+      "UPI": 1237
+    },
+    "fraud_ratio": 0.061297,
+    "cashout_ratio": 0,
+    "timestamp_available": true,
+    "account_identifiers_available": true,
+    "geographic_information_available": true,
+    "atm_information_available": false,
+    "labels_original_or_derived": "fraud_label ORIGINAL where supplied"
+  },
+  "comparison_notes": [
+    "Amount and transaction-type distributions are descriptive only; public data is not altered to match synthetic data.",
+    "PaySim cash-out labels are derived from transaction type, while fraud labels remain original where supplied.",
+    "Cash-out ATM locations and complaint relationships are synthetic because public transaction sources do not provide them."
+  ]
+}

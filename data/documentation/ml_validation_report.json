@@ -1,0 +1,15 @@
+{
+  "cases": 600,
+  "transactions": 5090,
+  "withdrawals": 598,
+  "atms": 120,
+  "candidates": 4800,
+  "fraud_cases": 284,
+  "cashout_cases": 262,
+  "splits": {
+    "TRAIN": 420,
+    "VALIDATION": 90,
+    "TEST": 90
+  },
+  "issues": []
+}

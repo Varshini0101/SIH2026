@@ -1,0 +1,1 @@
+transaction_id,case_id,timestamp,amount,transaction_type,source_account,destination_account,fraud_label,cash_out_label,account_age,transaction_velocity,transaction_frequency,balance_delta,sequence_position,location,source_dataset,source_type,cash_out_label_origin,unavailable_fields

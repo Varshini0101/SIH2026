@@ -1,0 +1,109 @@
+{
+  "dispatches": [
+    {
+      "referenceId": "DSP-TEST-1789052318967",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T14:58:38.970Z"
+    }
+  ],
+  "alertStatuses": {
+    "AL-0001": "DISPATCHED"
+  },
+  "complaints": [
+    {
+      "id": "CMP-1001",
+      "complaintDate": "2026-08-10",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 85000,
+      "victimIdentifier": "VIC-1041",
+      "suspectedAccount": "SBIN0001001",
+      "status": "HIGH_RISK",
+      "location": "Chennai",
+      "description": "Victim reported repeated OTP and UPI credential sharing leading to fast transfer loss.",
+      "relatedAccounts": [
+        "acc-001"
+      ]
+    },
+    {
+      "id": "CMP-1002",
+      "complaintDate": "2026-08-12",
+      "fraudType": "ATM WITHDRAWAL",
+      "fraudAmount": 62000,
+      "victimIdentifier": "VIC-2064",
+      "suspectedAccount": "SBIN0001004",
+      "status": "UNDER_INVESTIGATION",
+      "location": "Bengaluru",
+      "description": "ATM withdrawals followed by suspicious state-level cash movement pattern.",
+      "relatedAccounts": [
+        "acc-004"
+      ]
+    },
+    {
+      "id": "CMP-1003",
+      "complaintDate": "2026-08-15",
+      "fraudType": "IMPS FRAUD",
+      "fraudAmount": 41000,
+      "victimIdentifier": "VIC-9721",
+      "suspectedAccount": "SBIN0001002",
+      "status": "NEW",
+      "location": "Hyderabad",
+      "description": "Multiple IMPS transactions from a compromised device in short period.",
+      "relatedAccounts": [
+        "acc-002"
+      ]
+    },
+    {
+      "id": "CMP-1004",
+      "complaintDate": "2026-08-16",
+      "fraudType": "NEFT FRAUD",
+      "fraudAmount": 96500,
+      "victimIdentifier": "VIC-3282",
+      "suspectedAccount": "SBIN0001005",
+      "status": "HIGH_RISK",
+      "location": "Chennai",
+      "description": "Large NEFT transfer chain linked to account takeover and mule activity.",
+      "relatedAccounts": [
+        "acc-005"
+      ]
+    },
+    {
+      "id": "CMP-1005",
+      "complaintDate": "2026-08-19",
+      "fraudType": "BANKING FRAUD",
+      "fraudAmount": 25000,
+      "victimIdentifier": "VIC-4851",
+      "suspectedAccount": "SBIN0001003",
+      "status": "RESOLVED",
+      "location": "Coimbatore",
+      "description": "Fraud alert triggered, account frozen before damage escalated.",
+      "relatedAccounts": [
+        "acc-003"
+      ]
+    },
+    {
+      "id": "CMP-1006",
+      "complaintDate": "2026-08-22",
+      "fraudType": "ATM WITHDRAWAL",
+      "fraudAmount": 73000,
+      "victimIdentifier": "VIC-4812",
+      "suspectedAccount": "SBIN0001006",
+      "status": "UNDER_INVESTIGATION",
+      "location": "Hyderabad",
+      "description": "Cash withdrawals at multiple ATMs near transit hubs in less than 12 hours.",
+      "relatedAccounts": [
+        "acc-006"
+      ]
+    }
+  ]
+}

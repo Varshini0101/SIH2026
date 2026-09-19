@@ -1,0 +1,273 @@
+{
+  "dispatches": [
+    {
+      "referenceId": "DSP-20260919-400",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "NEFT transfer of ₹56,000 from SBIN0001005 to BKG-5502 at Chennai.",
+      "fraudRingSummary": "SBIN0001005 is linked to 2 suspicious transaction(s) involving beneficiary BKG-5502 and associated account-level risk indicators.",
+      "evidence": "Transaction TXN-2009 recorded at 16 Aug 2026, 11:31 pm in Chennai\nCurrent risk indicator is CRITICAL and score is 96/100\nDestination beneficiary BKG-5502 is already part of the suspicious ring cluster\nRelated account risk band is HIGH with 2 linked suspicious activity events",
+      "investigatorNotes": "Suspected misuse pattern identified. Requires human review before final disposition.",
+      "recommendedAction": "Escalate to LEA",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-19T13:27:53.193Z"
+    },
+    {
+      "referenceId": "DSP-20260911-303",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "NEFT transfer of ₹56,000 from SBIN0001005 to BKG-5502 at Chennai.",
+      "fraudRingSummary": "SBIN0001005 is linked to 2 suspicious transaction(s) involving beneficiary BKG-5502 and associated account-level risk indicators.",
+      "evidence": "Transaction TXN-2009 recorded at 16 Aug 2026, 11:31 pm in Chennai\nCurrent risk indicator is CRITICAL and score is 96/100\nDestination beneficiary BKG-5502 is already part of the suspicious ring cluster\nRelated account risk band is HIGH with 2 linked suspicious activity events",
+      "investigatorNotes": "Suspected misuse pattern identified. Requires human review before final disposition.",
+      "recommendedAction": "Escalate to LEA",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-11T07:36:33.325Z"
+    },
+    {
+      "referenceId": "DSP-20260911-643",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "NEFT transfer of ₹56,000 from SBIN0001005 to BKG-5502 at Chennai.",
+      "fraudRingSummary": "SBIN0001005 is linked to 2 suspicious transaction(s) involving beneficiary BKG-5502 and associated account-level risk indicators.",
+      "evidence": "Transaction TXN-2009 recorded at 16 Aug 2026, 11:31 pm in Chennai\nCurrent risk indicator is CRITICAL and score is 96/100\nDestination beneficiary BKG-5502 is already part of the suspicious ring cluster\nRelated account risk band is HIGH with 2 linked suspicious activity events",
+      "investigatorNotes": "Suspected misuse pattern identified. Requires human review before final disposition.",
+      "recommendedAction": "Escalate to LEA",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-11T06:44:44.952Z"
+    },
+    {
+      "referenceId": "DSP-TEST-1789053149867",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T15:12:29.871Z"
+    },
+    {
+      "referenceId": "DSP-TEST-1789052443883",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T15:00:43.885Z"
+    },
+    {
+      "referenceId": "DSP-TEST-1789052417255",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T15:00:17.258Z"
+    },
+    {
+      "referenceId": "DSP-TEST-1789052392568",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T14:59:52.571Z"
+    },
+    {
+      "referenceId": "DSP-TEST-1789052343640",
+      "alertId": "AL-0001",
+      "recipient": "Bank",
+      "entity": "SBIN0001005",
+      "fraudType": "NEFT Transfer Pattern",
+      "riskScore": 96,
+      "severity": "CRITICAL",
+      "transactionSummary": "Test persistent dispatch",
+      "fraudRingSummary": "Test fraud ring summary",
+      "evidence": "Test evidence line",
+      "investigatorNotes": "Test investigator notes",
+      "recommendedAction": "Freeze Transaction",
+      "status": "Dispatched",
+      "dispatchTime": "2026-09-10T14:59:03.636Z"
+    }
+  ],
+  "alertStatuses": {
+    "AL-0001": "DISPATCHED"
+  },
+  "complaints": [
+    {
+      "complaintId": "CMP-1789824362552",
+      "complaintDate": "2026-09-19",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 20000,
+      "victimIdentifier": "VIC-NEW",
+      "suspectedAccount": "SBIN0001001",
+      "status": "NEW",
+      "location": "Chennai",
+      "description": "No description provided.",
+      "relatedAccounts": [],
+      "id": "CMP-1789824362552"
+    },
+    {
+      "complaintId": "CMP-1789111923759",
+      "complaintDate": "2026-09-11",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 200000,
+      "victimIdentifier": "VIC-NEW",
+      "suspectedAccount": "SBIN0001001",
+      "status": "NEW",
+      "location": "Chennai",
+      "description": "No description provided.",
+      "relatedAccounts": [],
+      "id": "CMP-1789111923759"
+    },
+    {
+      "complaintId": "CMP-1789106328371",
+      "complaintDate": "2026-09-11",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 20000,
+      "victimIdentifier": "VIC-NEW",
+      "suspectedAccount": "SBIN0001001",
+      "status": "NEW",
+      "location": "Chennai",
+      "description": "No description provided.",
+      "relatedAccounts": [],
+      "id": "CMP-1789106328371"
+    },
+    {
+      "complaintId": "CMP-1789105887959",
+      "complaintDate": "2026-09-11",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 20000,
+      "victimIdentifier": "VIC-NEW",
+      "suspectedAccount": "SBIN0001001",
+      "status": "NEW",
+      "location": "Chennai",
+      "description": "No description provided.",
+      "relatedAccounts": [],
+      "id": "CMP-1789105887959"
+    },
+    {
+      "id": "CMP-1001",
+      "complaintDate": "2026-08-10",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 85000,
+      "victimIdentifier": "VIC-1041",
+      "suspectedAccount": "SBIN0001001",
+      "status": "HIGH_RISK",
+      "location": "Chennai",
+      "description": "Victim reported repeated OTP and UPI credential sharing leading to fast transfer loss.",
+      "relatedAccounts": [
+        "acc-001"
+      ]
+    },
+    {
+      "id": "CMP-1002",
+      "complaintDate": "2026-08-12",
+      "fraudType": "ATM WITHDRAWAL",
+      "fraudAmount": 62000,
+      "victimIdentifier": "VIC-2064",
+      "suspectedAccount": "SBIN0001004",
+      "status": "UNDER_INVESTIGATION",
+      "location": "Bengaluru",
+      "description": "ATM withdrawals followed by suspicious state-level cash movement pattern.",
+      "relatedAccounts": [
+        "acc-004"
+      ]
+    },
+    {
+      "id": "CMP-1003",
+      "complaintDate": "2026-08-15",
+      "fraudType": "IMPS FRAUD",
+      "fraudAmount": 41000,
+      "victimIdentifier": "VIC-9721",
+      "suspectedAccount": "SBIN0001002",
+      "status": "NEW",
+      "location": "Hyderabad",
+      "description": "Multiple IMPS transactions from a compromised device in short period.",
+      "relatedAccounts": [
+        "acc-002"
+      ]
+    },
+    {
+      "id": "CMP-1004",
+      "complaintDate": "2026-08-16",
+      "fraudType": "NEFT FRAUD",
+      "fraudAmount": 96500,
+      "victimIdentifier": "VIC-3282",
+      "suspectedAccount": "SBIN0001005",
+      "status": "HIGH_RISK",
+      "location": "Chennai",
+      "description": "Large NEFT transfer chain linked to account takeover and mule activity.",
+      "relatedAccounts": [
+        "acc-005"
+      ]
+    },
+    {
+      "id": "CMP-1005",
+      "complaintDate": "2026-08-19",
+      "fraudType": "BANKING FRAUD",
+      "fraudAmount": 25000,
+      "victimIdentifier": "VIC-4851",
+      "suspectedAccount": "SBIN0001003",
+      "status": "RESOLVED",
+      "location": "Coimbatore",
+      "description": "Fraud alert triggered, account frozen before damage escalated.",
+      "relatedAccounts": [
+        "acc-003"
+      ]
+    },
+    {
+      "id": "CMP-1006",
+      "complaintDate": "2026-08-22",
+      "fraudType": "ATM WITHDRAWAL",
+      "fraudAmount": 73000,
+      "victimIdentifier": "VIC-4812",
+      "suspectedAccount": "SBIN0001006",
+      "status": "UNDER_INVESTIGATION",
+      "location": "Hyderabad",
+      "description": "Cash withdrawals at multiple ATMs near transit hubs in less than 12 hours.",
+      "relatedAccounts": [
+        "acc-006"
+      ]
+    }
+  ]
+}
