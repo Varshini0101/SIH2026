@@ -228,7 +228,11 @@ export const getRiskIntelligence = async (caseId = 'CMP-1001') => {
     locations: locations.sort((left, right) => right.priorityScore - left.priorityScore),
     summary: {
       highestPriorityLocation: locations.sort((left, right) => right.priorityScore - left.priorityScore)[0]?.id || null,
-      criticalLocations: locations.filter((location) => location.riskLevel === 'CRITICAL').length,
+      criticalLocations: locations.filter((location) => {
+        const riskLevel = String(location.riskLevel || '').toUpperCase()
+        const riskScore = Number(location.riskScore || 0)
+        return riskLevel === 'CRITICAL' || riskScore >= 81
+      }).length,
       totalAmountAtRisk: round(locations.reduce((sum, location) => sum + location.amountAtRisk, 0))
     }
   }

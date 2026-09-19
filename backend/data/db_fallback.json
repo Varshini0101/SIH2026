@@ -134,6 +134,20 @@
   },
   "complaints": [
     {
+      "complaintId": "CMP-1789837697513",
+      "caseId": "CASE-00007",
+      "complaintDate": "2026-09-19",
+      "fraudType": "UPI FRAUD",
+      "fraudAmount": 25000,
+      "victimIdentifier": "VIC-CASE-TEST",
+      "suspectedAccount": "SBIN0002001",
+      "status": "NEW",
+      "location": "Bengaluru",
+      "description": "Case ID generation regression check.",
+      "relatedAccounts": [],
+      "id": "CMP-1789837697513"
+    },
+    {
       "complaintId": "CMP-1789824362552",
       "complaintDate": "2026-09-19",
       "fraudType": "UPI FRAUD",

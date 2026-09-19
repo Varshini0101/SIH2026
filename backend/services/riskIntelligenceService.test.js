@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { calculateLocationRisk, calculatePriority, calibrateProbability, classifyRisk, explainAssessment, simulateFalsePositiveCost, validateSimulationInput } from './riskIntelligenceService.js'
+import { createComplaintRecord, generateCaseId } from './databaseService.js'
 
 test('classifies risk at configured boundaries', () => {
   assert.equal(classifyRisk(20), 'LOW')
@@ -45,4 +46,26 @@ test('simulates false-positive costs as estimates', () => {
 test('rejects invalid simulation input', () => {
   assert.equal(validateSimulationInput({ predictionProbability: 2 }).valid, false)
   assert.equal(validateSimulationInput({ predictionProbability: 0.5, amountAtRisk: 100, interventionCost: 10, estimatedRecoveryIfIntervened: 0.9, estimatedRecoveryIfMissed: 0.1 }).valid, true)
+})
+
+test('generates a unique CASE id for every new complaint and retains it in the record', async () => {
+  const first = generateCaseId()
+  const second = generateCaseId()
+  assert.match(first, /^CASE-/)
+  assert.notEqual(first, second)
+
+  const complaint = await createComplaintRecord({
+    complaintDate: '2026-09-19',
+    fraudType: 'UPI FRAUD',
+    fraudAmount: 25000,
+    victimIdentifier: 'VIC-CASE-TEST',
+    suspectedAccount: 'SBIN0002001',
+    status: 'NEW',
+    location: 'Bengaluru',
+    description: 'Case ID generation regression check.'
+  })
+
+  assert.match(complaint.caseId, /^CASE-/)
+  assert.equal(complaint.caseId, complaint.caseId)
+  assert.ok(complaint.complaintId)
 })

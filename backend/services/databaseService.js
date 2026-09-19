@@ -59,6 +59,34 @@ const resolveComplaintCaseId = (complaintId) => {
   return demoComplaintCaseAliasMap.get(trimmed) || processedComplaintCaseMap.get(trimmed) || null
 }
 
+let lastGeneratedCaseNumber = 0
+
+export const generateCaseId = (existingCaseIds = []) => {
+  const values = (existingCaseIds || [])
+    .map((value) => String(value).trim())
+    .filter(Boolean)
+
+  const numericValues = values
+    .filter((value) => /^CASE-\d+$/i.test(value))
+    .map((value) => Number(value.replace(/^CASE-/i, '')))
+    .filter(Number.isFinite)
+
+  const nextNumber = Math.max(lastGeneratedCaseNumber, ...numericValues, 0) + 1
+  lastGeneratedCaseNumber = nextNumber
+  return `CASE-${String(nextNumber).padStart(5, '0')}`
+}
+
+const getExistingCaseIds = async () => {
+  if (useFallback()) {
+    return fallbackComplaints
+      .map((complaint) => complaint.caseId || resolveComplaintCaseId(complaint.complaintId || complaint.id || ''))
+      .filter(Boolean)
+  }
+
+  const docs = await Complaint.find({ caseId: { $ne: null } }).select('caseId').lean()
+  return docs.map((doc) => doc.caseId).filter(Boolean)
+}
+
 const loadFallbackStore = () => {
 
   try {
@@ -197,6 +225,7 @@ export const connectDatabase = async () => {
       if (complaintCount === 0) {
         await Complaint.insertMany(fallbackComplaints.map((c) => ({
           complaintId: c.complaintId || c.id,
+          caseId: c.caseId || resolveComplaintCaseId((c.complaintId || c.id || '').trim()),
           complaintDate: c.complaintDate || new Date(),
           fraudType: c.fraudType || 'BANKING FRAUD',
           fraudAmount: Number(c.fraudAmount || 0),
@@ -388,8 +417,8 @@ export const getAccountSummary = async () => {
 }
 
 export const getComplaintById = async (id) => {
-  if (useFallback()) return normalizeComplaint(fallbackComplaints.find((complaint) => complaint.id === id || complaint.complaintId === id) || null)
-  const complaint = await Complaint.findOne({ complaintId: id })
+  if (useFallback()) return normalizeComplaint(fallbackComplaints.find((complaint) => complaint.id === id || complaint.complaintId === id || complaint.caseId === id) || null)
+  const complaint = await Complaint.findOne({ $or: [{ complaintId: id }, { caseId: id }] })
   return normalizeComplaint(complaint)
 }
 
@@ -416,15 +445,16 @@ export const getComplaints = async (query = {}) => {
     ]
   }
   const results = await Complaint.find(criteria)
-  return results.map((complaint) => normalizeComplaint({
-    ...complaint.toObject ? complaint.toObject() : complaint,
-    caseId: resolveComplaintCaseId((complaint.complaintId || complaint.id || '').trim())
-  }))
+  return results.map((complaint) => normalizeComplaint(complaint.toObject ? complaint.toObject() : complaint))
 }
 
 export const createComplaintRecord = async (payload) => {
+  const existingCaseIds = await getExistingCaseIds()
+  const caseId = payload.caseId || generateCaseId(existingCaseIds)
+
   const newPayload = {
     complaintId: payload.complaintId || `CMP-${Date.now()}`,
+    caseId,
     complaintDate: payload.complaintDate || new Date(),
     fraudType: payload.fraudType || 'BANKING FRAUD',
     fraudAmount: Number(payload.fraudAmount || 0),

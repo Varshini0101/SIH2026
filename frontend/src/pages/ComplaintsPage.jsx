@@ -21,6 +21,7 @@ export default function ComplaintsPage() {
   const [statusFilter, setStatusFilter] = useState('')
   const [form, setForm] = useState(emptyForm)
   const [loading, setLoading] = useState(true)
+  const [createdCaseId, setCreatedCaseId] = useState('')
 
   const loadComplaints = async () => {
     try {
@@ -47,7 +48,9 @@ export default function ComplaintsPage() {
   const handleCreateComplaint = async (event) => {
     event.preventDefault()
     try {
-      await api.post('/complaints', form)
+      const response = await api.post('/complaints', form)
+      const nextCaseId = response.data?.caseId || response.data?.complaintId || ''
+      setCreatedCaseId(nextCaseId)
       setForm(emptyForm)
       await loadComplaints()
     } catch (error) {
@@ -92,6 +95,11 @@ export default function ComplaintsPage() {
             <div className="inline-actions" style={{ marginTop: 16 }}>
               <button className="primary-button" type="submit">Add complaint</button>
             </div>
+            {createdCaseId && (
+              <div style={{ marginTop: 14, color: 'var(--primary)', fontWeight: 600 }}>
+                Complaint created. Case ID: {createdCaseId}
+              </div>
+            )}
           </form>
         </div>
 

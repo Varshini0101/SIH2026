@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 const complaintSchema = new mongoose.Schema(
   {
     complaintId: { type: String, required: true, unique: true, trim: true },
+    caseId: { type: String, trim: true, index: true },
     complaintDate: { type: Date, required: true },
     fraudType: { type: String, required: true },
     fraudAmount: { type: Number, required: true },

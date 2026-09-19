@@ -16,6 +16,6 @@
     "validate:data": "npm run normalize:public && node data/pipeline/validateSyntheticML.mjs"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.2.4"
   }
 }
